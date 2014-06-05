@@ -1,7 +1,14 @@
 #**************************************************************************
 # Section 4.15 multiple regression ----------------------------------------
 # Author: William M. Murrah
+# Description: This code replicates the section 4.15 example on the 
+#              the appliedmissingdata.com website, which demonstrates
+#              a regression analysis using FIML.
+# Version history ------------------------------------------------------
 #**************************************************************************
+# 2014.06.05: file created.
+#**************************************************************************
+
 # R packages used
 library(lavaan)
 
@@ -25,14 +32,16 @@ model <- '
 # similar to (b1) and (b2) in Mplus. These are
 # needed to perform wald test.
 
-jobperf ~ b1*wbeing + b2*jobsat
+  jobperf ~ b1*wbeing + b2*jobsat
+'
 
+'
 # Variances
-wbeing ~~ wbeing
-jobsat ~~ jobsat
+  wbeing ~~ wbeing
+  jobsat ~~ jobsat
 
 # Covariance/correlation
-wbeing ~~ jobsat
+  wbeing ~~ jobsat
 '
 
 fit <- sem(model, employee, missing='fiml', meanstructure=TRUE, 
