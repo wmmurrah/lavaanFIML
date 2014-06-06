@@ -33,9 +33,7 @@ model <- '
 # needed to perform wald test.
 
   jobperf ~ b1*wbeing + b2*jobsat
-'
 
-'
 # Variances
   wbeing ~~ wbeing
   jobsat ~~ jobsat
@@ -44,7 +42,7 @@ model <- '
   wbeing ~~ jobsat
 '
 
-fit <- sem(model, employee, missing='fiml', meanstructure=TRUE, 
+fit <- sem(model, employee,  missing='fiml', meanstructure=TRUE, 
            fixed.x=FALSE)
 
 summary(fit, fit.measures=TRUE, rsquare=TRUE, standardize=TRUE)
