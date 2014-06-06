@@ -58,3 +58,26 @@ summary(fit, fit.measures=TRUE, standardize=TRUE)
 # to that found in Mplus output.
 inspect(fit, 'patterns')
 inspect(fit, 'coverage')
+
+
+
+model <- '
+# variances
+age      ~~ age
+tenure   ~~ tenure
+female   ~~ female
+wbeing   ~~ wbeing
+jobsat   ~~ jobsat
+jobperf  ~~ jobperf
+turnover ~~ turnover
+iq       ~~ iq
+
+# covariances/correlations
+age      ~~ tenure + female + wbeing + jobsat + jobperf + turnover + iq
+tenure   ~~ female + wbeing + jobsat + jobperf + turnover + iq
+female   ~~ wbeing + jobsat + jobperf + turnover + iq
+wbeing   ~~ jobsat + jobperf + turnover + iq
+jobsat   ~~ jobperf + turnover + iq
+jobperf  ~~ turnover + iq
+turnover ~~ iq
+'
