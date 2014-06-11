@@ -42,7 +42,7 @@ model <- '
   wbeing ~~ jobsat
 '
 
-fit <- sem(model, employee,  missing='fiml', meanstructure=TRUE, 
+fit <- sem(model, employee, missing='fiml', meanstructure=TRUE, 
            fixed.x=FALSE)
 
 summary(fit, fit.measures=TRUE, rsquare=TRUE, standardize=TRUE)
