@@ -1,13 +1,24 @@
-#**************************************************************************
-# interaction -------------------------------------------------------------
-# William Murrah
-#**************************************************************************
+#***********************************************************************
+# Regression with interaction - continuous moderator -------------------
+# Author: William M. Murrah
+# Description: This code replicates regression example of an interaction
+#              with a continuous moderator found on the website 
+#              http://www.appliedmissingdata.com/.
+# Version history ------------------------------------------------------
+# 2014.06.16: code created
+#***********************************************************************
 library(lavaan)
-consc <- read.table('Computer Files/Maximum Likeihood/conscientiousness.dat')
+consc <- read.table('data/conscientiousness.dat')
+
+
+
 
 names(consc) <- c("agree", "consc", "jobperf")
 consc[consc==-99] <- NA
+
+# Create interaction variable.
 consc$interact <- consc$agree*consc$consc
+
 model <- '
 # Model mean of moderator with label
 agree ~ meanm*1
