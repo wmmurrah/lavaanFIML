@@ -3,7 +3,7 @@
 # Author: William M. Murrah
 # Description: This code replicates the section 4.14 example on the 
 #              the appliedmissingdata.com website, which generates 
-#              descriptive statistics and correlations,
+#              descriptive statistics and correlations.
 # Version history ------------------------------------------------------
 # 2014.05.30: code created
 # 2014.06.01: rewrote heading
