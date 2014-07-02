@@ -10,9 +10,6 @@
 library(lavaan)
 consc <- read.table('data/conscientiousness.dat')
 
-
-
-
 names(consc) <- c("agree", "consc", "jobperf")
 consc[consc==-99] <- NA
 
