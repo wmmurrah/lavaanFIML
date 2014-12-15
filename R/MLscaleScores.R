@@ -6,7 +6,7 @@
 library(lavaan)
 
 # Import text file into R as a data frame.
-eatingrisk <- read.table("Computer Files/Maximum Likeihood/eatingrisk.dat", 
+eatingrisk <- read.table("data/eatingrisk.dat", 
                        quote="\"")
 
 # Assign names to variables.
@@ -17,7 +17,8 @@ names(eatingrisk) <- c('abuse', 'bmi', paste0('bds',1:7),
 eatingrisk[eatingrisk==-99] <- NA
 attach(eatingrisk)
 eatingrisk$bodydis <- bds1 + bds2 + bds3 + bds4 + bds5 + bds6 + bds7
-eatingrisk$eatrisk<-  edr1 + edr2 + edr3 + edr4 + edr5 + edr6 
+eatingrisk$eatrisk <-  edr1 + edr2 + edr3 + edr4 + edr5 + edr6 
+detach(eatingrisk)
 
 model <- '
 eatrisk ~ abuse+bodydis
