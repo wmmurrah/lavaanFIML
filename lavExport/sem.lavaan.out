@@ -1,0 +1,287 @@
+Mplus VERSION 7.3 (Linux)
+MUTHEN & MUTHEN
+12/15/2014   1:19 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE: Mplus version
+
+  DATA:
+   file = sem.lavaan.raw;
+  variable:
+   names = jobperf wbeing jobsat;
+
+  missing are all (-999999);
+
+  ANALYSIS:
+   estimator = ml;
+
+  MODEL:
+
+  jobperf ON
+  wbeing (b1)
+  jobsat (b2);
+
+  wbeing WITH jobsat;
+
+
+  wbeing jobsat;
+
+  MODEL TEST:
+
+  b1 = 0;
+  b2 = 0;
+
+  OUTPUT:
+   standardized(stdyx) sampstat;
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+Mplus version
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         480
+
+Number of dependent variables                                    1
+Number of independent variables                                  2
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Continuous
+   JOBPERF
+
+Observed independent variables
+   WBEING      JOBSAT
+
+
+Estimator                                                       ML
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+
+Input data file(s)
+  sem.lavaan.raw
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns             3
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              JOBPERF       WBEING        JOBSAT
+              ________      ________      ________
+ JOBPERF        1.000
+ WBEING         0.667         0.667
+ JOBSAT         0.667         0.333         0.667
+
+
+SAMPLE STATISTICS
+
+
+     ESTIMATED SAMPLE STATISTICS
+
+
+           Means
+              JOBPERF       WBEING        JOBSAT
+              ________      ________      ________
+      1         6.021         6.286         5.959
+
+
+           Covariances
+              JOBPERF       WBEING        JOBSAT
+              ________      ________      ________
+ JOBPERF        1.570
+ WBEING         0.673         1.387
+ JOBSAT         0.259         0.466         1.390
+
+
+           Correlations
+              JOBPERF       WBEING        JOBSAT
+              ________      ________      ________
+ JOBPERF        1.000
+ WBEING         0.456         1.000
+ JOBSAT         0.175         0.335         1.000
+
+
+     MAXIMUM LOG-LIKELIHOOD VALUE FOR THE UNRESTRICTED (H1) MODEL IS -1753.093
+
+
+UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     JOBPERF               6.021      -0.046       3.000    2.71%       5.000      6.000      6.000
+             480.000       1.570      -0.020      10.000    0.21%       6.000      7.000
+     WBEING                6.266      -0.058       3.000    0.94%       5.000      6.000      6.000
+             320.000       1.395       0.024      10.000    0.31%       7.000      7.000
+     JOBSAT                5.966       0.044       3.000    1.25%       5.000      6.000      6.000
+             320.000       1.396      -0.358       9.000    0.94%       6.000      7.000
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                        9
+
+Loglikelihood
+
+          H0 Value                       -1753.093
+          H1 Value                       -1753.093
+
+Information Criteria
+
+          Akaike (AIC)                    3524.186
+          Bayesian (BIC)                  3561.750
+          Sample-Size Adjusted BIC        3533.185
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                              0.000
+          Degrees of Freedom                     0
+          P-Value                           0.0000
+
+Wald Test of Parameter Constraints
+
+          Value                             95.882
+          Degrees of Freedom                     2
+          P-Value                           0.0000
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.000
+          90 Percent C.I.                    0.000  0.000
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                1.000
+          TLI                                1.000
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                             80.176
+          Degrees of Freedom                     2
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.000
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ JOBPERF  ON
+    WBEING             0.476      0.055      8.665      0.000
+    JOBSAT             0.027      0.060      0.444      0.657
+
+ WBEING   WITH
+    JOBSAT             0.467      0.098      4.780      0.000
+
+ Means
+    WBEING             6.286      0.063     99.692      0.000
+    JOBSAT             5.959      0.065     91.836      0.000
+
+ Intercepts
+    JOBPERF            2.869      0.382      7.517      0.000
+
+ Variances
+    WBEING             1.387      0.108     12.852      0.000
+    JOBSAT             1.390      0.109     12.711      0.000
+
+ Residual Variances
+    JOBPERF            1.243      0.087     14.356      0.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ JOBPERF  ON
+    WBEING             0.447      0.049      9.181      0.000
+    JOBSAT             0.025      0.056      0.444      0.657
+
+ WBEING   WITH
+    JOBSAT             0.336      0.064      5.268      0.000
+
+ Means
+    WBEING             5.338      0.213     25.003      0.000
+    JOBSAT             5.054      0.207     24.451      0.000
+
+ Intercepts
+    JOBPERF            2.289      0.342      6.687      0.000
+
+ Variances
+    WBEING             1.000      0.000    999.000    999.000
+    JOBSAT             1.000      0.000    999.000    999.000
+
+ Residual Variances
+    JOBPERF            0.792      0.039     20.319      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    JOBPERF            0.208      0.039      5.350      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.477E-03
+       (ratio of smallest to largest eigenvalue)
+
+
+     Beginning Time:  13:19:09
+        Ending Time:  13:19:09
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2014 Muthen & Muthen

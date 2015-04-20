@@ -1,0 +1,30 @@
+TITLE: Mplus version 
+
+DATA:
+ file = sem.lavaan.raw;
+variable:
+ names = jobperf wbeing jobsat;
+
+missing are all (-999999);
+
+ANALYSIS:
+ estimator = ml;
+
+MODEL:
+
+jobperf ON
+wbeing (b1)
+jobsat (b2);
+
+wbeing WITH jobsat;
+
+
+wbeing jobsat;
+
+MODEL TEST:
+
+b1 = 0;
+b2 = 0;
+
+OUTPUT:
+ standardized(stdyx) sampstat;
